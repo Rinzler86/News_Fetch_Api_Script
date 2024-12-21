@@ -20,7 +20,7 @@ def fetch_news(query, from_date, to_date, language="en", location="us", page=1):
         "X-RapidAPI-Host": "newsnow.p.rapidapi.com"
     }
 
-    response = requests.post(url, json=payload, headers=headers)
+    response = requests.post(url, json=payload, headers=headers, timeout=60)
 
     print(f"HTTP Status Code: {response.status_code}")
     print(f"Response Text: {response.text}")
